@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "microservice.diabetes-risk-service-url",
+    "type": "java.lang.String",
+    "description": "A description for 'microservice.diabetes-risk-service-url'"
+  },
+  {
+    "name": "microservice.note-service-url",
+    "type": "java.lang.String",
+    "description": "A description for 'microservice.note-service-url'"
+  },
+  {
+    "name": "microservice.patient-service-url",
+    "type": "java.lang.String",
+    "description": "A description for 'microservice.patient-service-url'"
+  },
+  {
+    "name": "microservice.diabetes-risk-service-url",
+    "type": "java.lang.String",
+    "description": "A description for 'microservice.diabetes-risk-service-url'"
+  }
+]}

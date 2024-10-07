@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Historique des Notes du Patient</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .btn-warning {
+            background-color: yellow;
+            color: black;
+        }
+
+        .btn-danger {
+            background-color: red;
+            color: white;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f9f9f9;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        small {
+            color: #666;
+        }
+        .custom-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.custom-btn:hover {
+    background-color: #0056b3;
+}
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .actions {
+            margin-top: 10px;
+        }
+        .bouton{
+             margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    
+        <h1>Historique des Notes du Patient</h1>
+        
+        <div class="bouton">
+           <a th:href="@{/ui/notes/add/{id}(id=${patientId})}" class="custom-btn">Ajouter une nouvelle note</a>
+           <a th:href="@{/ui/patients}" class="custom-btn">Retour à la liste des patients</a>
+        </div>
+        <ul>
+            <li th:each="note : ${notes}">
+                <p><strong>Note :</strong> <span th:text="${note.noteContent}"></span></p>
+                <small>Créé le : <span th:text="${note.createdAt}"></span></small>
+                
+                <div class="actions">
+                   <a th:href="@{/ui/notes/edit/{id}(id=${note.id})}" class="btn btn-warning">Modifier</a>
+                   <a th:href="@{/ui/notes/delete/{id}(id=${note.id}, patientId=${patientId})}" class="btn btn-danger">Supprimer</a>
+                </div>
+
+            </li>
+        </ul>
+
+        <div class="bouton">
+    <a th:href="@{/ui/notes/add/{id}(id=${patientId})}" class="custom-btn">Ajouter une nouvelle note</a>
+    <a th:href="@{/ui/patients}" class="custom-btn">Retour à la liste des patients</a>
+      </div>
+    </div>
+</body>
+</html>
