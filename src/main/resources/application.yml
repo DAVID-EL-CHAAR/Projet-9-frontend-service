@@ -13,9 +13,14 @@ spring:
       password: "{noop}password"
 
 # Configuration des adresses des microservices
-microservice:
-  patient-service-url: ${PATIENT_SERVICE_URL:http://localhost:8080}
-  note-service-url: ${NOTE_SERVICE_URL:http://localhost:8083}
-  diabetes-risk-service-url: ${Diabetes-Risk-Service-Url:http://localhost:8084}
+#microservice:
+  #patient-service-url: ${PATIENT_SERVICE_URL:http://localhost:8080}
+  #note-service-url: ${NOTE_SERVICE_URL:http://localhost:8083}
+  #diabetes-risk-service-url: ${Diabetes-Risk-Service-Url:http://localhost:8084}
   
 # Le cookie sera valable sur tout le site
+
+microservice:
+  patient-service-url: ${PATIENT_SERVICE_URL:http://patient-service:8080}
+  note-service-url: ${NOTE_SERVICE_URL:http://note-service:8083}
+  diabetes-risk-service-url: ${DIABETES_RISK_SERVICE_URL:http://diabetes-risk-service:8084}
