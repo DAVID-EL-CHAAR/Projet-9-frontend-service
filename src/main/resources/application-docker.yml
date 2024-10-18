@@ -1,0 +1,29 @@
+server:
+  port: 8082  # Le port sur lequel le frontend écoute
+  servlet:
+    session:
+      cookie:
+        name: JSESSIONID
+        path: / 
+
+spring:
+  security:
+    user:
+      name: user
+      password: "{noop}password"
+
+
+ 
+  config:
+    activate:
+      on-profile: docker
+
+#microservice:
+  #patient-service-url: ${PATIENT_SERVICE_URL:http://patient-service:8080}
+  #note-service-url: ${NOTE_SERVICE_URL:http://note-service:8083}
+  #diabetes-risk-service-url: ${DIABETES_RISK_SERVICE_URL:http://diabetes-risk-service:8084}
+  
+microservice:
+  patient-service-url: ${PATIENT_SERVICE_URL:http://gateway-service:8081}
+  note-service-url: ${NOTE_SERVICE_URL:http://gateway-service:8081}
+  diabetes-risk-service-url: ${DIABETES_RISK_SERVICE_URL:http://gateway-service:8081}

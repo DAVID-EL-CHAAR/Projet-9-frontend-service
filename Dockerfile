@@ -23,4 +23,4 @@ COPY --from=build /app/target/frontend-service-0.0.1-SNAPSHOT.jar /app/frontend-
 EXPOSE 8082
 
 # Lancer l'application
-ENTRYPOINT ["java", "-jar", "frontend-service.jar"]
+ENTRYPOINT ["java", "-jar", "frontend-service.jar","--spring.profiles.active=docker"]
