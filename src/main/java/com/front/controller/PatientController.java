@@ -28,7 +28,7 @@ public class PatientController {
         this.diabetesRiskRepository = diabetesRiskRepository;
         this.patientService = patientService;
     }
-    
+    /*
     @GetMapping("/patients")
     public String getPatients(Model model, HttpServletRequest request) {
         List<Map<String, Object>> patients = patientRepository.getAllPatients();
@@ -54,9 +54,9 @@ public class PatientController {
 
         model.addAttribute("patients", patients);
         return "patients";  // Afficher la vue "patients.html"
-    }
+    }*/
 
-    /*
+    
     @GetMapping("/patients")
     public String getPatients(Model model) {
         List<Map<String, Object>> patients = patientRepository.getAllPatients();
@@ -69,7 +69,7 @@ public class PatientController {
 
         model.addAttribute("patients", patients);
         return "patients";  // Afficher la vue "patients.html"
-    }*/
+    }
 
     @GetMapping("/patients/add")
     public String showAddPatientForm(Model model) {

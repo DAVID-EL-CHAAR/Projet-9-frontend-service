@@ -21,21 +21,21 @@ public class DiabetesRiskRepository {
         this.restTemplate = restTemplate;
     }
     
-    /*
+    
     public String getDiabetesRisk(Long patientId) {
         String url = diabetesRiskServiceUrl + "/diabetes-risk/" + patientId;
         return restTemplate.getForObject(url, String.class);
-    } */
+    } 
 
     
-    // Nouvelle méthode pour inclure le cookie de session
     
+    /*
     public String getDiabetesRisk(Long patientId, String sessionId) {
         String url = diabetesRiskServiceUrl + "/diabetes-risk/" + patientId;
 
         HttpHeaders headers = new HttpHeaders();
         if (sessionId != null) {
-            headers.add("Cookie", "JSESSIONID=" + sessionId); // Ajouter le cookie JSESSIONID
+            headers.add("Cookie", "JSESSIONID=" + sessionId); 
         }
 
         HttpEntity<?> entity = new HttpEntity<>(headers);
@@ -45,7 +45,7 @@ public class DiabetesRiskRepository {
 
         // Retourner la réponse du service (risque de diabète)
         return response.getBody();
-    } 
+    } */
 }
 
 

@@ -56,7 +56,7 @@ public class NoteController {
     public String showEditNoteForm(@PathVariable String id, Model model) {
         Note note = noteService.getNoteById(id);
         model.addAttribute("note", note);
-        model.addAttribute("patientId", note.getPatientId());  // Assurez-vous d'ajouter le patientId ici
+        model.addAttribute("patientId", note.getPatientId());  
         return "notes/edit-note";  // Template pour modifier la note
     }
 
